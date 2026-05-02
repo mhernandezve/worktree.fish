@@ -4,10 +4,10 @@ A port of [DHH's agent-git-trees.sh](https://gist.github.com/dhh/18575558fc5ee10
 
 ## Install
 
-With [fisherman]
+With [fisher]
 
 ```fish
-$ fisher install timnew/worktree.fish
+$ fisher install mhernandezve/worktree.fish
 ```
 
 ## Usage
@@ -103,4 +103,4 @@ set -x GW_TMUXINATOR_TEMPLATE my-custom-template
 
 Hope you have a _fast_ swim!
 
-[fisherman]: https://github.com/fisherman/fisherman
+[fisher]: https://github.com/jorgebucaran/fisher
