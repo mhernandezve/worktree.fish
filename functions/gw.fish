@@ -31,7 +31,7 @@ function gw --description "Select and open a git worktree"
             return 1
         end
         set line (printf "%s\n" $lines | fzf --prompt="worktrees> " \
-            --preview='p=$(printf "%s\n" {} | awk "{print \$1}"); git -C "$p" status -sb 2>/dev/null')
+            --preview='p=$(printf "%s" {} | cut -d" " -f1); git -C "$p" status -sb 2>/dev/null')
     end
 
     test -n "$line"; or return
