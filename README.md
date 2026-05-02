@@ -68,6 +68,12 @@ If neither is set, `gw` defaults to `cd` into the worktree.
 
 Requires `fzf` installed (only needed when there are multiple worktrees).
 
+`--with` and `GW_OPENER` accept any command or wrapper function name. You can use a builtin command (e.g. `code`, `nvim`, `tmux`) or pass the name of a custom wrapper:
+
+```fish
+gw --with gw-tmuxinator
+```
+
 #### Wrappers for complex openers
 
 If your opener needs extra arguments, create a wrapper function:
