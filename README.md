@@ -86,6 +86,15 @@ Then use it with:
 set -x GW_OPENER gw-tmux
 ```
 
+#### Tmuxinator wrapper
+
+The `wrappers/gw-tmuxinator.fish` example opens worktrees in a tmuxinator session. It uses the `worktree-ai` template by default, which you can override via the `GW_TMUXINATOR_TEMPLATE` environment variable:
+
+```fish
+set -x GW_OPENER gw-tmuxinator
+set -x GW_TMUXINATOR_TEMPLATE my-custom-template
+```
+
 Hope you have a _fast_ swim!
 
 [fisherman]: https://github.com/fisherman/fisherman
