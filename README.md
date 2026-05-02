@@ -42,6 +42,50 @@ return to base directory
 $ gwcd
 ```
 
+### Select and open a worktree
+
+```fish
+$ gw
+```
+
+Interactively select a worktree and open it. If there is only one worktree, it is selected automatically. If there are multiple worktrees, `fzf` is used with a `git status` preview.
+
+You can customize how the worktree is opened:
+
+- Via environment variable:
+  ```fish
+  set -x GW_OPENER tmux
+  gw
+  ```
+
+- Via `--with` flag (overrides the variable):
+  ```fish
+  gw --with code
+  gw --with nvim
+  ```
+
+If neither is set, `gw` defaults to `cd` into the worktree.
+
+Requires `fzf` installed (only needed when there are multiple worktrees).
+
+#### Wrappers for complex openers
+
+If your opener needs extra arguments, create a wrapper function:
+
+```fish
+function gw-tmux
+    set -l wt $argv[1]
+    set -l repo (basename $wt)
+    tmux new-session -c $wt -s $repo
+end
+```
+
+Then use it with:
+
+```fish
+set -x GW_OPENER gw-tmux
+```
+
 Hope you have a _fast_ swim!
 
 [fisherman]: https://github.com/fisherman/fisherman
